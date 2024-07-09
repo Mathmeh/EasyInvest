@@ -6,4 +6,9 @@
         android:icon="@drawable/portfolio"
         android:title="@string/title_portfolio"/>
 
+    <item
+        android:id="@+id/navigation_asset"
+        android:icon="@drawable/asset"
+        android:title="@string/title_asset"/>
+
 </menu>

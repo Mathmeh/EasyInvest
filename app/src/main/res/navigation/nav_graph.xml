@@ -10,4 +10,9 @@
         android:name="com.example.easyinvest.presentation.portfolio.FragmentPortfolio"
         android:label="fragment_portfolio"
         tools:layout="@layout/fragment_portfolio" />
+    <fragment
+        android:id="@+id/fragmentAsset"
+        android:name="com.example.easyinvest.presentation.asset.FragmentAsset"
+        android:label="fragment_asset"
+        tools:layout="@layout/fragment_asset" />
 </navigation>
