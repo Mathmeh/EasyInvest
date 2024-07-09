@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EasyInvest</string>
+    <string name="title_portfolio">Портфели</string>
 </resources>
