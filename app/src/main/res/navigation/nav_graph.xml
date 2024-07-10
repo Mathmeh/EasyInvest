@@ -15,4 +15,9 @@
         android:name="com.example.easyinvest.presentation.asset.FragmentAsset"
         android:label="fragment_asset"
         tools:layout="@layout/fragment_asset" />
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.example.easyinvest.presentation.settings.FragmentSettings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

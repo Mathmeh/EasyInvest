@@ -11,4 +11,9 @@
         android:icon="@drawable/asset"
         android:title="@string/title_asset"/>
 
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/settings"
+        android:title="@string/title_settings"/>
+
 </menu>
