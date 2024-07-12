@@ -1,28 +1,14 @@
 package com.example.easyinvest.presentation.asset
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import com.example.easyinvest.databinding.FragmentAssetBinding
+import com.example.easyinvest.presentation.BaseFragment
 
-class FragmentAsset : Fragment() {
-    private var _binding: FragmentAssetBinding? = null
+class FragmentAsset : BaseFragment<FragmentAssetBinding>() {
 
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
+    override fun inflateViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentAssetBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+        container: ViewGroup?
+    ) = FragmentAssetBinding.inflate(inflater, container, false)
 }
