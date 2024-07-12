@@ -1,4 +1,4 @@
-package com.example.easyinvest.presentation.settings
+package com.example.easyinvest.presentation.portfolio
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.easyinvest.databinding.FragmentSettingsBinding
 
-class FragmentPortfolio : Fragment() {
+class FragmentSettings : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
 
     private val binding get() = _binding!!
@@ -18,8 +18,7 @@ class FragmentPortfolio : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {
