@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragment_portfolio"
+        android:icon="@drawable/portfolio"
+        android:title="@string/title_portfolio"/>
+
+    <item
+        android:id="@+id/fragment_asset"
+        android:icon="@drawable/asset"
+        android:title="@string/title_asset"/>
+
+    <item
+        android:id="@+id/fragment_settings"
+        android:icon="@drawable/settings"
+        android:title="@string/title_settings"/>
+
+</menu>
