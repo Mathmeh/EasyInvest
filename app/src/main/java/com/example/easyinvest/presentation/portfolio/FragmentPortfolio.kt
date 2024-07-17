@@ -1,31 +1,14 @@
 package com.example.easyinvest.presentation.portfolio
 
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.easyinvest.databinding.FragmentPortfolioBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.easyinvest.presentation.BaseFragment
 
-@AndroidEntryPoint
-class FragmentPortfolio : Fragment() {
-    private var _binding: FragmentPortfolioBinding? = null
+class FragmentPortfolio : BaseFragment<FragmentPortfolioBinding>() {
 
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
+    override fun inflateViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentPortfolioBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+        container: ViewGroup?
+    ) = FragmentPortfolioBinding.inflate(inflater, container, false)
 }

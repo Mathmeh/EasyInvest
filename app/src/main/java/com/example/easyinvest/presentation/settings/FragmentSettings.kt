@@ -7,25 +7,30 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.easyinvest.Domain.Entity.Currency
 import com.example.easyinvest.R
 import com.example.easyinvest.databinding.FragmentSettingsBinding
+import com.example.easyinvest.presentation.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FragmentSettings : Fragment() {
-    private var _binding: FragmentSettingsBinding? = null
-    private val binding get() = _binding!!
+class FragmentSettings : BaseFragment<FragmentSettingsBinding>() {
+
     private val fragmentSettingsViewModel by viewModels<FragmentSettingsViewModel>()
+
+    override fun inflateViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentSettingsBinding.inflate(inflater, container, false)
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
+        super.onCreateView(inflater, container, savedInstanceState)
+
         val spinner = binding.spinner
 
         val currencies = Currency.getCurrNames()
@@ -58,10 +63,5 @@ class FragmentSettings : Fragment() {
         }
 
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

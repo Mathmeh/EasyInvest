@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentPortfolio">
+    app:startDestination="@id/fragment_portfolio">
 
     <fragment
-        android:id="@+id/fragmentPortfolio"
+        android:id="@+id/fragment_portfolio"
         android:name="com.example.easyinvest.presentation.portfolio.FragmentPortfolio"
-        android:label="fragment_portfolio"
+        android:label="@string/title_portfolio"
         tools:layout="@layout/fragment_portfolio" />
     <fragment
-        android:id="@+id/fragmentAsset"
+        android:id="@+id/fragment_asset"
         android:name="com.example.easyinvest.presentation.asset.FragmentAsset"
-        android:label="fragment_asset"
+        android:label="@string/title_asset"
         tools:layout="@layout/fragment_asset" />
     <fragment
-        android:id="@+id/fragmentSettings"
+        android:id="@+id/fragment_settings"
         android:name="com.example.easyinvest.presentation.settings.FragmentSettings"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        android:label="@string/title_settings" 
+		tools:layout="@layout/fragment_settings" />
 </navigation>
