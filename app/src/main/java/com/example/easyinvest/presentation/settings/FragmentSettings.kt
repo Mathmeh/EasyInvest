@@ -8,14 +8,17 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.example.easyinvest.Domain.Entity.Currency
+import com.example.easyinvest.R
 import com.example.easyinvest.databinding.FragmentSettingsBinding
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FragmentSettings : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
-    private val currencies = arrayOf("BYN", "USD", "EUR", "CNY", "RUB")
-    private val fragmentSettingsViewModel = viewModel<FragmentSettingsViewModel>()
+    private val fragmentSettingsViewModel by viewModels<FragmentSettingsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,18 +26,18 @@ class FragmentSettings : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
         val spinner = binding.spinner
+
+        val currencies = Currency.getCurrNames()
         val adapter = ArrayAdapter(
             requireContext(), android.R.layout.simple_spinner_item, currencies
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
         spinner.adapter = adapter
-        val selected = fragmentSettingsViewModel.value.getCurrencySettings
-        val itemNumber = currencies.indexOf(selected.value ?: "USD")
-        spinner.setSelection(itemNumber)
+
+        fragmentSettingsViewModel.getCurrencySettings.observe(viewLifecycleOwner) { currentCur ->
+            binding.spinner.setSelection(Currency.getCurrIndex(currentCur))
+        }
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -44,9 +47,9 @@ class FragmentSettings : Fragment() {
                 id: Long
             ) {
                 val selectedItem = currencies[position]
-                fragmentSettingsViewModel.value.setCurrencySettings(selectedItem)
+                fragmentSettingsViewModel.setCurrencySettings(selectedItem)
                 Toast.makeText(
-                    requireContext(), "Валюта по умолчанию: $selectedItem", Toast.LENGTH_SHORT
+                    requireContext(), getString(R.string.def_curr, selectedItem), Toast.LENGTH_SHORT
                 ).show()
             }
 
@@ -54,7 +57,7 @@ class FragmentSettings : Fragment() {
             }
         }
 
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {

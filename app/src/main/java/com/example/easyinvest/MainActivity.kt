@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.example.easyinvest.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -20,14 +22,17 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.fragmentPortfolio)
                     true
                 }
+
                 R.id.navigation_asset -> {
                     navController.navigate(R.id.fragmentAsset)
                     true
                 }
+
                 R.id.navigation_settings -> {
                     navController.navigate(R.id.fragmentSettings)
                     true
                 }
+
                 else -> false
             }
         }

@@ -12,4 +12,5 @@
     <string name="title_settings">Настройки</string>
     <string name="currency_prefs">currency_prefs</string>
     <string name="select_your_default_currency">Select your default currency:</string>
+    <string name="def_curr">Валюта по умолчанию: %1$s</string>
 </resources>
