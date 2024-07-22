@@ -1,7 +1,6 @@
 package com.example.easyinvest.presentation.settings
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +38,6 @@ class FragmentSettings : BaseFragment<FragmentSettingsBinding>() {
         with(binding.defaultCurrencySetButton) {
             setOnClickListener {
                 showCurrencyBottomSheet()
-                Log.i("d", 1.toString())
             }
         }
 
@@ -51,7 +49,5 @@ class FragmentSettings : BaseFragment<FragmentSettingsBinding>() {
         bottomSheet.show(
             parentFragmentManager, bottomSheet.tag
         )
-
-        Log.i("aaaa", fragmentSettingsViewModel.getCurrencySettings.value.toString())
     }
 }

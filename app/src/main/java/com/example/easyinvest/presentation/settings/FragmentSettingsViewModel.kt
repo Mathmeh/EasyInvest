@@ -1,6 +1,5 @@
 package com.example.easyinvest.presentation.settings
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,6 +18,5 @@ class FragmentSettingsViewModel
     fun setCurrencySettings(curr: String) {
         settingsProvider.setDefaultCurrency(curr)
         _getCurrencySettings.value = curr
-        Log.i("aaaa", getCurrencySettings.value!!)
     }
 }
