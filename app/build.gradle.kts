@@ -6,8 +6,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("kapt") version "2.0.0"
-
-    id("com.google.dagger.hilt.android") version "2.51.1" apply false
+    alias(libs.plugins.hilt)
 }
 apply(plugin = "com.google.dagger.hilt.android")
 
@@ -48,7 +47,6 @@ android {
 dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
-    implementation(libs.javapoet)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

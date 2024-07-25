@@ -1,20 +1,17 @@
 package com.example.easyinvest.di
 
-import android.content.Context
 import com.example.easyinvest.DataAcces.SettingsRepositoryImpl
+import com.example.easyinvest.Domain.SettingsRepository
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
-    @Singleton
-    @Provides
-    fun bindSettingsProvider(@ApplicationContext context: Context): SettingsRepositoryImpl {
-        return SettingsRepositoryImpl(context = context)
-    }
+interface AppModule {
+    @Binds
+    fun bindSettingsRepository(
+        settingsRepositoryImpl: SettingsRepositoryImpl
+    ): SettingsRepository
 }

@@ -2,22 +2,26 @@ package com.example.easyinvest.DataAcces
 
 import android.content.Context
 import com.example.easyinvest.Domain.SettingsRepository
-import com.example.easyinvest.R
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class SettingsRepositoryImpl(context: Context) : SettingsRepository {
-
+@Singleton
+class SettingsRepositoryImpl
+@Inject constructor(@ApplicationContext context: Context) : SettingsRepository {
     val sharedPref = context.getSharedPreferences(
-        context.getString(R.string.currency_prefs),
-        Context.MODE_PRIVATE
+        DEFAULT_CURRENCY_PREF_KEY, Context.MODE_PRIVATE
     )
-    private val _currrencyPrefName =
-        context.getString(R.string.currency_prefs)
 
     override fun getDefaultCurrency(): String {
-        return sharedPref.getString(_currrencyPrefName, "USD") ?: "USD"
+        return sharedPref.getString(DEFAULT_CURRENCY_PREF_KEY, "USD") ?: "USD"
     }
 
     override fun setDefaultCurrency(curr: String) {
-        sharedPref.edit().putString(_currrencyPrefName, curr).apply()
+        sharedPref.edit().putString(DEFAULT_CURRENCY_PREF_KEY, curr).apply()
+    }
+
+    companion object {
+        const val DEFAULT_CURRENCY_PREF_KEY = "currency_prefs"
     }
 }

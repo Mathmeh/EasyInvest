@@ -10,8 +10,8 @@ enum class Currency(val currencyName: String) {
         private const val RUB_INDEX = 3
         private const val BYN_INDEX = 4
 
-        public fun getCurrIndex(day: String): Int {
-            return when (day) {
+        public fun getCurrIndex(curr: String): Int {
+            return when (curr) {
                 "USD" -> USD_INDEX
                 "EUR" -> EUR_INDEX
                 "CNY" -> CNY_INDEX
