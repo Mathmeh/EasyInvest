@@ -38,7 +38,7 @@ class FragmentSettings : BaseFragment<FragmentSettingsBinding>() {
     private fun showCurrencyBottomSheet() {
         val bottomSheet = CurrencyBottomSheet()
         bottomSheet.show(
-            parentFragmentManager, bottomSheet.tag
+            parentFragmentManager, CurrencyBottomSheet.TAG
         )
     }
 }

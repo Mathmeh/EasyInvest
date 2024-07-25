@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.easyinvest.Domain.Entity.Currency
@@ -38,22 +37,27 @@ class CurrencyBottomSheet : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         currencies = Currency.getCurrNames()
-        val listView: ListView = view.findViewById(R.id.listView)
 
-        val adapter = ArrayAdapter(
+        val arrayAdapter = ArrayAdapter(
             requireContext(), android.R.layout.simple_list_item_1, currencies
         )
-        listView.adapter = adapter
 
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = currencies[position]
-            settingsViewModel.setCurrencySettings(selectedItem)
-            Toast.makeText(
-                requireContext(),
-                getString(R.string.def_curr, selectedItem),
-                Toast.LENGTH_SHORT
-            ).show()
-            dismiss()
+        binding.listView.apply {
+            adapter = arrayAdapter
+            setOnItemClickListener { _, _, position, _ ->
+                val selectedItem = currencies[position]
+                settingsViewModel.setCurrencySettings(selectedItem)
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.def_curr, selectedItem),
+                    Toast.LENGTH_SHORT
+                ).show()
+                dismiss()
+            }
         }
+    }
+
+    companion object {
+        const val TAG = "TAG_CURRENCY_BOTTOM_SHEET"
     }
 }

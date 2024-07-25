@@ -8,7 +8,6 @@ plugins {
     kotlin("kapt") version "2.0.0"
     alias(libs.plugins.hilt)
 }
-apply(plugin = "com.google.dagger.hilt.android")
 
 android {
     namespace = "com.example.easyinvest"
