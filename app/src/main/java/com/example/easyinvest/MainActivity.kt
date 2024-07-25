@@ -7,7 +7,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.easyinvest.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -19,13 +21,17 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val navView = binding.bottomNavigationView
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager
+                .findFragmentById(R.id.fragment_container_view) as NavHostFragment
         val navController = navHostFragment.navController
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.fragment_portfolio,
-            R.id.fragment_asset,
-            R.id.fragment_settings
-        ))
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.fragment_portfolio,
+                R.id.fragment_asset,
+                R.id.fragment_settings
+            )
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

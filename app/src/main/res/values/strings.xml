@@ -1,6 +1,16 @@
 <resources>
+    <string-array name="Languages">
+        <item>USD</item>
+        <item>BUN</item>
+        <item>EUR</item>
+        <item>CNY</item>
+        <item>RUB</item>
+    </string-array>
     <string name="app_name">EasyInvest</string>
     <string name="title_portfolio">Портфели</string>
     <string name="title_asset">Бумаги</string>
     <string name="title_settings">Настройки</string>
+    <string name="select_your_default_currency">Select your default currency:</string>
+    <string name="def_curr">Валюта по умолчанию: %1$s</string>
+    <string name="usd">USD</string>
 </resources>
