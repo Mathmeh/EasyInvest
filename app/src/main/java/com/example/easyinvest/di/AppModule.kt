@@ -1,6 +1,8 @@
 package com.example.easyinvest.di
 
+import com.example.easyinvest.DataAcces.AssetRepositoryImpl
 import com.example.easyinvest.DataAcces.SettingsRepositoryImpl
+import com.example.easyinvest.Domain.AssetsRepository
 import com.example.easyinvest.Domain.SettingsRepository
 import dagger.Binds
 import dagger.Module
@@ -14,4 +16,9 @@ interface AppModule {
     fun bindSettingsRepository(
         settingsRepositoryImpl: SettingsRepositoryImpl
     ): SettingsRepository
+
+    @Binds
+    fun bindAssetRepository(
+        assetRepositoryImpl: AssetRepositoryImpl
+    ): AssetsRepository
 }
