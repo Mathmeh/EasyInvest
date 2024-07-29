@@ -11,10 +11,26 @@ import java.time.LocalDate
 object MockAssetsList {
     private val assetsList = listOf(
         Cash(
-            0, "USD Asset", 1.0, AssetMeta("USA", "cash"), Currency.USD, "USD"
+            0,
+            "USD Asset",
+            1.0,
+            AssetMeta(
+                "USA",
+                "cash"
+            ),
+            Currency.USD,
+            "USD"
         ),
         Cash(
-            1, "BYN Asset", 2.3, AssetMeta("BEL", "cash"), Currency.BYN, "BYN"
+            1,
+            "BYN Asset",
+            2.3,
+            AssetMeta(
+                "BEL",
+                "cash"
+            ),
+            Currency.BYN,
+            "BYN"
         ),
         Stock(
             1,

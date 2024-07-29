@@ -9,7 +9,31 @@ open class Asset(
     open val meta: AssetMeta,
     open val currency: Currency,
     open val ticker: String
-)
+) {
+    override fun hashCode(): Int {
+        var result = id
+        result = 31 * result + name.hashCode()
+        result = 31 * result + purchasePrice.hashCode()
+        result = 31 * result + meta.hashCode()
+        result = 31 * result + currency.hashCode()
+        result = 31 * result + ticker.hashCode()
+        return result
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Asset) return false
+
+        if (id != other.id) return false
+        if (name != other.name) return false
+        if (purchasePrice != other.purchasePrice) return false
+        if (meta != other.meta) return false
+        if (currency != other.currency) return false
+        if (ticker != other.ticker) return false
+
+        return true
+    }
+}
 
 data class Cash(
     override val id: Int,

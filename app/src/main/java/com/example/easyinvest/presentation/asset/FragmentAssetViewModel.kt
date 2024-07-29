@@ -16,7 +16,11 @@ class FragmentAssetViewModel
     }
     val assetsList: LiveData<List<Asset>> get() = _assets
 
-    fun getAssetById(id: Int): Asset {
-        return assetProvider.getAssetById(id)
+    fun getAssetById(id: Int): Asset? {
+        return try {
+            assetProvider.getAssetById(id)
+        } catch (e: IllegalArgumentException) {
+            return null
+        }
     }
 }

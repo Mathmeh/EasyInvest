@@ -11,13 +11,11 @@ class AssetRepositoryImpl
 @Inject constructor() : AssetsRepository {
     override fun getAllAssets(): List<Asset> {
         // TODO("This should be replaced with DB request")
-        val assets = MockAssetsList.getAssetList()
-        return assets
+        return MockAssetsList.getAssetList()
     }
 
     override fun getAssetById(id: Int): Asset {
         // TODO("This should be replaced with DB request")
-        val asset = MockAssetsList.getAssetById(id)
-        return asset
+        return MockAssetsList.getAssetById(id)
     }
 }

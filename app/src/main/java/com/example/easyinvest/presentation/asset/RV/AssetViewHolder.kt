@@ -12,19 +12,19 @@ class AssetViewHolder(var binding: ItemAssetBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(asset: Asset) {
-        asset.let {
-            binding.nameTextView.text = asset.name
-            binding.textViewTicker.text = asset.ticker
-            binding.textViewPurchasePrice.text = asset.purchasePrice.toString()
-            if (asset is Cash) {
-                binding.imageView.setImageResource(R.drawable.cash)
-            }
-            if (asset is Stock) {
-                binding.imageView.setImageResource(R.drawable.stock)
-            }
-            if (asset is Bond) {
-                binding.imageView.setImageResource(R.drawable.bond)
-            }
+        binding.apply {
+            nameTextView.text = asset.name
+            textViewTicker.text = asset.ticker
+            textViewPurchasePrice.text = asset.purchasePrice.toString()
+        }
+        if (asset is Cash) {
+            binding.imageView.setImageResource(R.drawable.cash)
+        }
+        if (asset is Stock) {
+            binding.imageView.setImageResource(R.drawable.stock)
+        }
+        if (asset is Bond) {
+            binding.imageView.setImageResource(R.drawable.bond)
         }
     }
 }
