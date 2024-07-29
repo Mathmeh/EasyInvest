@@ -24,16 +24,15 @@ class FragmentAsset : BaseFragment<FragmentAssetListBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = AssetAdapter()
+        val assetAdapter = AssetAdapter()
 
-        fragmentAssetsViewModel.assetsList.value?.let { assetList ->
-            binding.recyclerviewAssets.adapter = adapter
-            binding.recyclerviewAssets.layoutManager = LinearLayoutManager(context)
-            adapter.submitList(assetList)
+        binding.recyclerviewAssets.apply {
+            adapter = assetAdapter
+            layoutManager = LinearLayoutManager(context)
         }
 
         fragmentAssetsViewModel.assetsList.observe(viewLifecycleOwner) { assets ->
-            adapter.submitList(assets)
+            assetAdapter.submitList(assets)
         }
     }
 }
