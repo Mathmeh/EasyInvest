@@ -14,4 +14,6 @@
     <string name="def_curr">Валюта по умолчанию: %1$s</string>
     <string name="usd">USD</string>
     <string name="placeholder">ph</string>
+    <string name="placeholder">placeholder</string>
+    <string name="btn_name_add">Add</string>
 </resources>
