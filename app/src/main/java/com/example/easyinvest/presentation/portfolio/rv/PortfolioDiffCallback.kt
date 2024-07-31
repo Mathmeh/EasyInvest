@@ -1,3 +1,5 @@
+package com.example.easyinvest.presentation.portfolio.rv
+
 import androidx.recyclerview.widget.DiffUtil
 import com.example.easyinvest.Domain.Entity.Portfolio
 

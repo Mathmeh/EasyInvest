@@ -1,6 +1,5 @@
 package com.example.easyinvest.presentation.portfolio.rv
 
-import PortfolioDiffCallback
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
