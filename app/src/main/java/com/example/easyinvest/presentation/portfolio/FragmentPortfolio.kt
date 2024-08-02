@@ -31,6 +31,8 @@ class FragmentPortfolio : BaseFragment<FragmentPortfolioBinding>() {
             layoutManager = LinearLayoutManager(context)
         }
 
+        fragmentPortfolioViewModel.loadPortfolio()
+
         fragmentPortfolioViewModel.portfolioList.observe(viewLifecycleOwner) { portfolio ->
             portfolioAdapter.submitList(portfolio)
         }

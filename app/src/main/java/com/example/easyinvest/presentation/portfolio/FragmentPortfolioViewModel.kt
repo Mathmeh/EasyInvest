@@ -11,8 +11,10 @@ import javax.inject.Inject
 @HiltViewModel
 class FragmentPortfolioViewModel
 @Inject constructor(private val portfolioProvider: PortfolioRepository) : ViewModel() {
-    private val _portfolio = MutableLiveData<List<Portfolio>>().apply {
-        value = portfolioProvider.getListPortfolio()
-    }
+    private val _portfolio = MutableLiveData<List<Portfolio>>()
     val portfolioList: LiveData<List<Portfolio>> get() = _portfolio
+
+    fun loadPortfolio() {
+        _portfolio.value = portfolioProvider.getListPortfolio()
+    }
 }
