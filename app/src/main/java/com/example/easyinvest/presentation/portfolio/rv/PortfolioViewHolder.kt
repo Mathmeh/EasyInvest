@@ -6,7 +6,6 @@ import com.example.easyinvest.databinding.ItemPortfolioBinding
 
 class PortfolioViewHolder(private val binding: ItemPortfolioBinding) :
     RecyclerView.ViewHolder(binding.root) {
-
     fun bind(item: Portfolio) {
         with(binding) {
             portfolioName.text = item.name

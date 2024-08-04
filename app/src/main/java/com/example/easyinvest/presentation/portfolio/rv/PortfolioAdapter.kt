@@ -7,7 +7,6 @@ import com.example.easyinvest.Domain.Entity.Portfolio
 import com.example.easyinvest.databinding.ItemPortfolioBinding
 
 class PortfolioAdapter : ListAdapter<Portfolio, PortfolioViewHolder>(PortfolioDiffCallback()) {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PortfolioViewHolder {
         val binding =
             ItemPortfolioBinding.inflate(LayoutInflater.from(parent.context), parent, false)
