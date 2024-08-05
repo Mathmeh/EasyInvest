@@ -1,11 +1,11 @@
 package com.example.easyinvest.di
 
-import com.example.easyinvest.DataAcces.AssetRepositoryImpl
-import com.example.easyinvest.DataAcces.PortfolioRepositoryImpl
-import com.example.easyinvest.DataAcces.SettingsRepositoryImpl
-import com.example.easyinvest.Domain.AssetsRepository
-import com.example.easyinvest.Domain.PortfolioRepository
-import com.example.easyinvest.Domain.SettingsRepository
+import com.example.easyinvest.dataAcces.AssetRepositoryImpl
+import com.example.easyinvest.dataAcces.PortfolioRepositoryImpl
+import com.example.easyinvest.dataAcces.SettingsRepositoryImpl
+import com.example.easyinvest.domain.AssetsRepository
+import com.example.easyinvest.domain.PortfolioRepository
+import com.example.easyinvest.domain.SettingsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

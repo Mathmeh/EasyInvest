@@ -1,11 +1,11 @@
-package com.example.easyinvest.DataAcces.Mock
+package com.example.easyinvest.dataAcces.mock
 
-import com.example.easyinvest.Domain.Entity.Asset
-import com.example.easyinvest.Domain.Entity.AssetMeta
-import com.example.easyinvest.Domain.Entity.Bond
-import com.example.easyinvest.Domain.Entity.Cash
-import com.example.easyinvest.Domain.Entity.Currency
-import com.example.easyinvest.Domain.Entity.Stock
+import com.example.easyinvest.domain.entity.Asset
+import com.example.easyinvest.domain.entity.AssetMeta
+import com.example.easyinvest.domain.entity.Bond
+import com.example.easyinvest.domain.entity.Cash
+import com.example.easyinvest.domain.entity.Currency
+import com.example.easyinvest.domain.entity.Stock
 import java.time.LocalDate
 
 object MockAssetsList {

@@ -1,20 +1,20 @@
-package com.example.easyinvest.DataAcces
+package com.example.easyinvest.dataAcces
 
-import com.example.easyinvest.DataAcces.Mock.MockAssetsList
-import com.example.easyinvest.Domain.AssetsRepository
-import com.example.easyinvest.Domain.Entity.Asset
+import com.example.easyinvest.dataAcces.mock.MockAssetsList
+import com.example.easyinvest.domain.AssetsRepository
+import com.example.easyinvest.domain.entity.Asset
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class AssetRepositoryImpl
 @Inject constructor() : AssetsRepository {
-    override fun getAllAssets(): List<Asset> {
+    override suspend fun getAllAssets(): List<Asset> {
         // TODO("This should be replaced with DB request")
         return MockAssetsList.getAssetList()
     }
 
-    override fun getAssetById(id: Int): Asset {
+    override suspend fun getAssetById(id: Int): Asset {
         // TODO("This should be replaced with DB request")
         return MockAssetsList.getAssetById(id)
     }

@@ -1,8 +1,8 @@
-package com.example.easyinvest.Domain
+package com.example.easyinvest.domain
 
-import com.example.easyinvest.Domain.Entity.Asset
+import com.example.easyinvest.domain.entity.Asset
 
 interface AssetsRepository {
-    fun getAllAssets(): List<Asset>
-    fun getAssetById(id: Int): Asset
+    suspend fun getAllAssets(): List<Asset>
+    suspend fun getAssetById(id: Int): Asset
 }

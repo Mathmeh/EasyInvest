@@ -1,12 +1,12 @@
-package com.example.easyinvest.presentation.asset.RV
+package com.example.easyinvest.presentation.asset.rv
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.easyinvest.Domain.Entity.Asset
-import com.example.easyinvest.Domain.Entity.Bond
-import com.example.easyinvest.Domain.Entity.Cash
-import com.example.easyinvest.Domain.Entity.Stock
 import com.example.easyinvest.R
 import com.example.easyinvest.databinding.ItemAssetBinding
+import com.example.easyinvest.domain.entity.Asset
+import com.example.easyinvest.domain.entity.Bond
+import com.example.easyinvest.domain.entity.Cash
+import com.example.easyinvest.domain.entity.Stock
 
 class AssetViewHolder(var binding: ItemAssetBinding) :
     RecyclerView.ViewHolder(binding.root) {

@@ -1,15 +1,15 @@
-package com.example.easyinvest.DataAcces
+package com.example.easyinvest.dataAcces
 
-import com.example.easyinvest.DataAcces.Mock.MockPortfolioList
-import com.example.easyinvest.Domain.Entity.Portfolio
-import com.example.easyinvest.Domain.PortfolioRepository
+import com.example.easyinvest.dataAcces.mock.MockPortfolioList
+import com.example.easyinvest.domain.PortfolioRepository
+import com.example.easyinvest.domain.entity.Portfolio
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class PortfolioRepositoryImpl
 @Inject constructor() : PortfolioRepository {
-    override fun getListPortfolio(): List<Portfolio> {
+    override suspend fun getListPortfolio(): List<Portfolio> {
         return MockPortfolioList.getListPortfolio()
     }
 }

@@ -1,8 +1,8 @@
 package com.example.easyinvest.presentation.portfolio.rv
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.easyinvest.Domain.Entity.Portfolio
 import com.example.easyinvest.databinding.ItemPortfolioBinding
+import com.example.easyinvest.domain.entity.Portfolio
 
 class PortfolioViewHolder(private val binding: ItemPortfolioBinding) :
     RecyclerView.ViewHolder(binding.root) {

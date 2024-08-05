@@ -3,8 +3,8 @@ package com.example.easyinvest.presentation.portfolio.rv
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.example.easyinvest.Domain.Entity.Portfolio
 import com.example.easyinvest.databinding.ItemPortfolioBinding
+import com.example.easyinvest.domain.entity.Portfolio
 
 class PortfolioAdapter : ListAdapter<Portfolio, PortfolioViewHolder>(PortfolioDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PortfolioViewHolder {

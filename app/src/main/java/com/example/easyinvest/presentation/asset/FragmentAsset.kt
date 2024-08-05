@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.easyinvest.databinding.FragmentAssetListBinding
 import com.example.easyinvest.presentation.BaseFragment
-import com.example.easyinvest.presentation.asset.RV.AssetAdapter
+import com.example.easyinvest.presentation.asset.rv.AssetAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
