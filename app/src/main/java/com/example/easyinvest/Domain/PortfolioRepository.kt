@@ -1,7 +1,7 @@
-package com.example.easyinvest.Domain
+package com.example.easyinvest.domain
 
-import com.example.easyinvest.Domain.Entity.Portfolio
+import com.example.easyinvest.domain.entity.Portfolio
 
 interface PortfolioRepository {
-    fun getListPortfolio(): List<Portfolio>
+    suspend fun getListPortfolio(): List<Portfolio>
 }

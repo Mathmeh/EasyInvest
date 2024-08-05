@@ -1,6 +1,6 @@
-package com.example.easyinvest.Domain
+package com.example.easyinvest.domain
 
 interface SettingsRepository {
-    fun getDefaultCurrency(): String
-    fun setDefaultCurrency(curr: String)
+    suspend fun getDefaultCurrency(): String
+    suspend fun setDefaultCurrency(curr: String)
 }

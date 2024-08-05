@@ -1,4 +1,4 @@
-package com.example.easyinvest.Domain.Entity
+package com.example.easyinvest.domain.entity
 
 enum class Currency(val currencyName: String) {
     USD("usd"), EUR("eur"), CNY("cny"), RUB("rub"), BYN("byn");

@@ -1,5 +1,5 @@
 import androidx.recyclerview.widget.DiffUtil
-import com.example.easyinvest.Domain.Entity.Asset
+import com.example.easyinvest.domain.entity.Asset
 
 class AssetDiffCallback : DiffUtil.ItemCallback<Asset>() {
     override fun areItemsTheSame(oldItem: Asset, newItem: Asset): Boolean {

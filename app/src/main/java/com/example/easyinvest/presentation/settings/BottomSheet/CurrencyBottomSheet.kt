@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import com.example.easyinvest.Domain.Entity.Currency
 import com.example.easyinvest.R
 import com.example.easyinvest.databinding.BottomSheetCurrencyBinding
+import com.example.easyinvest.domain.entity.Currency
 import com.example.easyinvest.presentation.settings.FragmentSettingsViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint

@@ -1,6 +1,6 @@
-package com.example.easyinvest.DataAcces.Mock
+package com.example.easyinvest.dataAcces.mock
 
-import com.example.easyinvest.Domain.Entity.Portfolio
+import com.example.easyinvest.domain.entity.Portfolio
 
 object MockPortfolioList {
     private val portfolioList = listOf(
